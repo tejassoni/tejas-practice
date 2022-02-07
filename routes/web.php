@@ -17,10 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/send-email', [App\Http\Controllers\EmailController::class, 'sendEmail']);
 
 
 // Email Send Example
 Route::get('/send-email', [App\Http\Controllers\EmailController::class, 'sendEmail']);
 
-// Email Send Example
+// Email Send With Attachment Example
 Route::get('/send-email-attachment', [App\Http\Controllers\EmailController::class, 'sendEmailWithAttachment']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -19,6 +19,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'gender',
+        'mobile',
+        'address',
+        'date_of_birth',
+        'profile_image',
+        'hobbies',
+        'role_id',
+        'status',
         'email',
         'password',
     ];
@@ -41,4 +49,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function images()
+    {
+     return $this->hasMany('App\Models\Images', 'user_id');
+    }
 }

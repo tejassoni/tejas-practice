@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/send-email', [App\Http\Controllers\EmailController::class, 'sendEmail']);
 
+Route::get('/profile-view', [App\Http\Controllers\UserController::class, 'profile_view']);
+
+// Single File Handling
+Route::get('/file-upload', [App\Http\Controllers\FileHandlingController::class, 'loadSingleFileView']);
+Route::post('/file-upload-submit', [App\Http\Controllers\FileHandlingController::class, 'submitSingleFileUpload']);
+
+// Multiple File Handling
+Route::get('/multi-file-upload', [App\Http\Controllers\FileHandlingController::class, 'loadMultipleFileView']);
+Route::post('/multifile-upload-submit', [App\Http\Controllers\FileHandlingController::class, 'submitMultipleFileUpload']);
 
 // Email Send Example
 Route::get('/send-email', [App\Http\Controllers\EmailController::class, 'sendEmail']);

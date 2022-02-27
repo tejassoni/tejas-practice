@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->char('gender',1)->nullable()->comment('m=male,f=female');
-            $table->integer('mobile',false,true)->nullable(); // second autoincrement false, third unsigned true 
+            $table->string('mobile',10)->nullable(); // second autoincrement false, third unsigned true 
             $table->string('address')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('profile_image')->nullable();

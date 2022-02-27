@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('/profile-view', [App\Http\Controllers\UserController::class, 'profile_view']);
+Route::post('/profile-update-submit', [App\Http\Controllers\UserController::class, 'profile_update']);
 
 // Single File Handling
 Route::get('/file-upload', [App\Http\Controllers\FileHandlingController::class, 'loadSingleFileView']);

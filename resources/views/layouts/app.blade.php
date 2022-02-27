@@ -14,9 +14,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+ 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @stack('header-styles')
 </head>
 <body>
     <div id="app">
@@ -82,5 +84,8 @@
             @yield('content')
         </main>
     </div>
+    <script type='text/javascript' src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    @stack('footer-scripts')
 </body>
 </html>

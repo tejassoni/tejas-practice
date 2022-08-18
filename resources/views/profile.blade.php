@@ -92,7 +92,7 @@
                                     <input id="mobile" type="text"
                                         class="form-control @error('mobile') is-invalid @enderror" name="mobile"
                                         value="{{ isset($user_data->mobile) && !isset($old_user['mobile']) ? $user_data->mobile : old('mobile') }}"
-                                        maxlength="10" pattern="\d{10}" required autocomplete="mobile" autofocus>
+                                        maxlength="10" pattern="\d{10}" required autocomplete="mobile" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                     @error('mobile')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

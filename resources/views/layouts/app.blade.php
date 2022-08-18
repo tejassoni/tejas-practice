@@ -62,6 +62,10 @@
                                     <a class="dropdown-item" href="{{ url('profile-view') }}">
                                         {{ __('Profile') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="{{ url('change-password') }}">
+                                        {{ __('Change Password') }}
+                                    </a>
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
